@@ -1,53 +1,60 @@
-📚 # RAG-Document-Assistant
-An intelligent Retrieval-Augmented Generation (RAG) application that allows users to upload documents and ask questions from them using AI.
+# 📚 RAG File Assistant (AI-Powered Document Q&A)
 
-Built with Streamlit + LangChain + Groq + ChromaDB, this project enables fast and accurate document-based question answering.
+An intelligent **Retrieval-Augmented Generation (RAG)** application that allows users to upload documents and ask questions from them using AI.
 
-🚀 Features
-📄 Supports multiple file formats:
+Built with **Streamlit + LangChain + Groq + ChromaDB**, this project enables fast and accurate document-based question answering.
 
-PDF
+---
 
-TXT
+## 🚀 Features
 
-DOCX
+* 📄 Supports multiple file formats:
 
-CSV
+  * PDF
+  * TXT
+  * DOCX
+  * CSV
 
-🧠 AI-powered question answering using:
+* 🧠 AI-powered question answering using:
 
-Vector embeddings
+  * Vector embeddings
+  * Semantic search
+  * LLM (Groq)
 
-Semantic search
+* ⚡ Fast retrieval with **Chroma Vector Database**
 
-LLM (Groq)
+* 🔄 Two AI response styles:
 
-⚡ Fast retrieval with Chroma Vector Database
+  * 🤖 **System AI** → structured, precise, formal
+  * 🧑 **Human AI** → friendly, conversational, easy to understand
 
-🔄 Two AI response styles:
+* 📊 Smart document chunking & retrieval using **MMR (Maximal Marginal Relevance)**
 
-🤖 System AI → structured, precise, formal
+---
 
-🧑 Human AI → friendly, conversational, easy to understand
+## 🧠 How It Works
 
-📊 Smart document chunking & retrieval using MMR (Maximal Marginal Relevance)
-
-🧠 How It Works
+```
 Upload File → Chunking → Embeddings → Vector DB (Chroma)
                                       ↓
 User Query → Retrieval → Context → Groq LLM → Answer
-🛠️ Tech Stack
-Frontend: Streamlit
+```
 
-LLM: Groq (LLaMA models)
+---
 
-Embeddings: HuggingFace (all-MiniLM-L6-v2)
+## 🛠️ Tech Stack
 
-Vector DB: ChromaDB
+* **Frontend:** Streamlit
+* **LLM:** Groq (LLaMA models)
+* **Embeddings:** HuggingFace (`all-MiniLM-L6-v2`)
+* **Vector DB:** ChromaDB
+* **Framework:** LangChain
 
-Framework: LangChain
+---
 
-📂 Project Structure
+## 📂 Project Structure
+
+```
 RAG-File-Assistant/
 │
 ├── app.py
@@ -56,91 +63,137 @@ RAG-File-Assistant/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-⚙️ Installation
-1️⃣ Clone the repository
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the repository
+
+```
 git clone https://github.com/your-username/RAG-File-Assistant.git
 cd RAG-File-Assistant
-2️⃣ Create virtual environment
+```
+
+---
+
+### 2️⃣ Create virtual environment
+
+```
 python -m venv .venv
 .\.venv\Scripts\activate
-3️⃣ Install dependencies
+```
+
+---
+
+### 3️⃣ Install dependencies
+
+```
 pip install -r requirements.txt
-4️⃣ Add environment variables
-Create .env file:
+```
 
+---
+
+### 4️⃣ Add environment variables
+
+Create a `.env` file:
+
+```
 GROQ_API_KEY=your_groq_api_key
-▶️ Run the App
+```
+
+---
+
+## ▶️ Run the App
+
+```
 streamlit run app.py
-📌 Usage
-Upload a document (PDF, TXT, DOCX, CSV)
+```
 
-Click "Create Vector Database"
+---
 
-Choose AI mode:
+## 📌 Usage
 
-System AI (structured)
+1. Upload a document (PDF, TXT, DOCX, CSV)
+2. Click **"Create Vector Database"**
+3. Choose AI mode:
 
-Human AI (friendly)
+   * System AI (structured)
+   * Human AI (friendly)
+4. Ask questions about the document
 
-Ask questions about the document
+---
 
-🧪 Example
-Input:
+## 🧪 Example
+
+### Input:
+
 "What is the leave policy?"
 
-Output:
-Relevant extracted context
+### Output:
 
-AI-generated answer based only on document
+* Relevant extracted context
+* AI-generated answer based only on document
 
-⚡ Optimization Features
-Efficient chunking using RecursiveCharacterTextSplitter
+---
 
-Semantic search using MMR
+## ⚡ Optimization Features
 
-Fast inference using Groq API
+* Efficient chunking using `RecursiveCharacterTextSplitter`
+* Semantic search using **MMR**
+* Fast inference using **Groq API**
+* Persistent vector storage using **ChromaDB**
 
-Persistent vector storage using ChromaDB
+---
 
-🔒 Security Best Practices
-.env file is ignored (API keys protected)
+## 🔒 Security Best Practices
 
-chroma_db/ is ignored (prevents data leakage)
+* `.env` file is ignored (API keys protected)
+* `chroma_db/` is ignored (prevents data leakage)
+* No hardcoded credentials
 
-No hardcoded credentials
+---
 
-📈 Future Improvements
-🔹 Add user authentication
+## 📈 Future Improvements
 
-🔹 Cloud deployment (Streamlit Cloud / AWS)
+* 🔹 Add user authentication
+* 🔹 Cloud deployment (Streamlit Cloud / AWS)
+* 🔹 Support for image & multimodal RAG
+* 🔹 Use faster embeddings (OpenAI / GPU)
+* 🔹 Add chat history memory
 
-🔹 Support for image & multimodal RAG
+---
 
-🔹 Use faster embeddings (OpenAI / GPU)
+## 🌟 Key Highlights (For Resume)
 
-🔹 Add chat history memory
+* Built a **RAG-based AI system** for document Q&A
+* Integrated **LLM + Vector Database + Retrieval pipeline**
+* Implemented **multi-format document processing**
+* Designed **dual AI persona system (System vs Human AI)**
+* Optimized retrieval using **MMR search strategy**
 
-🌟 Key Highlights (For Resume)
-Built a RAG-based AI system for document Q&A
+---
 
-Integrated LLM + Vector Database + Retrieval pipeline
+## 🤝 Contributing
 
-Implemented multi-format document processing
-
-Designed dual AI persona system (System vs Human AI)
-
-Optimized retrieval using MMR search strategy
-
-🤝 Contributing
 Feel free to fork this repo and improve it.
 
-📜 License
+---
+
+## 📜 License
+
 This project is for educational and demonstration purposes.
 
-👨‍💻 Author
-Lokesh Mandapati
+---
+
+## 👨‍💻 Author
+
+**Lokesh Mandapati**
 AI & Data Enthusiast 🚀
 
-⭐ If you like this project
-Give it a ⭐ on GitHub!
+---
 
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
